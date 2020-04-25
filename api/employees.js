@@ -15,4 +15,35 @@ employeesRouter.get('/', (req, res, next) => {
     });
 });
 
+employeesRouter.post('/', (req, res, next) => {
+    const name = req.body.employee.name,
+            position = req.body.employee.position,
+            wage = req.body.employee.wage,
+            isCurrentEmployee = req.body.employee.isCurrentEmployee === 0 ? 0 : 1;
+    if (!name || !position || !wage) {
+        return res.sendStatus(400);
+    }
+    db.run(`INSERT INTO Employee (name, position, wage, is_current_employee) VALUES ($name, $position, $wage, $isCurrentEmployee)`,
+    {
+        $name: name,
+        $position: position,
+        $wage: wage,
+        $isCurrentEmployee: isCurrentEmployee
+    },
+    function (error) {
+        if(error) {
+            next(error);
+        } else {
+           db.get(`SELECT * FROM Employee WHERE Employee.id = ${this.lastID}`, 
+           (error, row) => {
+               if (error) {
+                   next(error);
+               } else {
+                   res.status(201).json({employee : row});
+               }
+           });
+        }
+    });
+});
+
 module.exports = employeesRouter;
