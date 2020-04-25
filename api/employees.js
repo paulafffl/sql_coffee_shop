@@ -31,6 +31,10 @@ employeesRouter.get('/', (req, res, next) => {
     });
 });
 
+employeesRouter.get('/:employeeId', (req, res, next) => {
+    res.status(200).json({employee: req.employee})
+});
+
 employeesRouter.post('/', (req, res, next) => {
     const name = req.body.employee.name,
             position = req.body.employee.position,
