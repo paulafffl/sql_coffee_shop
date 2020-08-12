@@ -10,8 +10,6 @@ The Expresso internal tool should allow users to:
 - Create, view, update, and delete employees
 - Create, view, update, and delete employee's timesheets
 
-## Project Instructions
-
 The starting code for this project can be found <a href="https://s3.amazonaws.com/codecademy-content/PRO/skill-paths/backend-javascript/projects/expresso/capstone-project-2-expresso-start.zip" target="_blank">here</a>. To view the local version of the site, open **index.html**.
 
 ## Implementation Details
