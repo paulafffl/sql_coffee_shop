@@ -12,19 +12,15 @@ The Expresso internal tool should allow users to:
 
 ## Project Instructions
 
-To start, download the starting code for this project <a href="https://s3.amazonaws.com/codecademy-content/PRO/skill-paths/backend-javascript/projects/expresso/capstone-project-2-expresso-start.zip" target="_blank">here</a>. After downloading the zip folder, double click it to uncompress it and access the contents of this project.
-
-To view your local version of the site, open **index.html** in Google Chrome.
+The starting code for this project can be found <a href="https://s3.amazonaws.com/codecademy-content/PRO/skill-paths/backend-javascript/projects/expresso/capstone-project-2-expresso-start.zip" target="_blank">here</a>. To view the local version of the site, open **index.html**.
 
 ## Implementation Details
 
-To complete this project, you will need to create the database tables and API routes specified below.
+I had to create the database tables and API routes specified below.
 
-To test this functionality you can run the testing suite and interact with the API via the provided front-end. If you want more data to interact with in the front-end, you can run the **seed.js** file to add data to your database.
+An empty **migration.js** file was provided to write table creation logic in.
 
-We've provided an empty **migration.js** file for you to write table creation logic in.
-
-In order for the tests and provided front-end to run properly, you will need to make sure to:
+In order for the tests and provided front-end to run properly, I had to make sure to:
 - Create and export your Express app from a root-level file called **server.js**
 - Accept and set an optional port argument for your server to listen on from `process.env.PORT`
 - If `process.env.PORT` is not set, server should run on port `4000` (this is where the provided front-end will make requests to)
@@ -144,16 +140,6 @@ In order for the tests and provided front-end to run properly, you will need to 
 
 ## Testing
 
-A testing suite has been provided for you, checking for all essential functionality and
-edge cases.
+A testing suite has been provided, checking for all essential functionality and edge cases. To test the functionalities, I also interacted with the API via the provided front-end and to have more data to interact with in the front-end, I ran the **seed.js** file to add data to the database.
 
-To run these tests, first, open the root project directory in your terminal. Then run `npm install` to install
-all necessary testing dependencies (if you haven't already).
-Finally, run `npm test`. You will see a list of tests that ran with information
-about whether or not each test passed. After this list, you will see more specific output
-about why each failing test failed.
-
-As you implement functionality, run the tests to
-ensure you are creating correctly named variables and functions that return the proper values.
-The tests will additionally help you identify edge cases that you may not have anticipated
-when first writing the functions.
+To run these tests, first run `npm install` to install all necessary testing dependencies and then `npm test`.
